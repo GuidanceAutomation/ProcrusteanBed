@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcrusteanBed.Architecture", "ProcrusteanBed.Architecture\ProcrusteanBed.Architecture.csproj", "{90C114EF-BF92-467C-88A6-F53A44B27140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcrusteanBed.Core", "ProcrusteanBed.Core\ProcrusteanBed.Core.csproj", "{B6902F95-E4C7-4A20-97D2-C7986DFDF6E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcrusteanBedBuilderApp", "ProcrusteanBedBuilderApp\ProcrusteanBedBuilderApp.csproj", "{FA0EF86C-C679-4BF3-9281-1E5AD20DA1C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcrusteanBed.Core.Test", "ProcrusteanBed.Core.Test\ProcrusteanBed.Core.Test.csproj", "{58AC1CC3-5DFE-48CC-86B7-AF847E925217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcrusteanBed.Core.Controls", "ProcrusteanBed.Core.Controls\ProcrusteanBed.Core.Controls.csproj", "{E9A12246-2185-4535-8B82-75A1F04C4F40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90C114EF-BF92-467C-88A6-F53A44B27140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C114EF-BF92-467C-88A6-F53A44B27140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C114EF-BF92-467C-88A6-F53A44B27140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C114EF-BF92-467C-88A6-F53A44B27140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6902F95-E4C7-4A20-97D2-C7986DFDF6E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6902F95-E4C7-4A20-97D2-C7986DFDF6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6902F95-E4C7-4A20-97D2-C7986DFDF6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6902F95-E4C7-4A20-97D2-C7986DFDF6E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0EF86C-C679-4BF3-9281-1E5AD20DA1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0EF86C-C679-4BF3-9281-1E5AD20DA1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0EF86C-C679-4BF3-9281-1E5AD20DA1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0EF86C-C679-4BF3-9281-1E5AD20DA1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58AC1CC3-5DFE-48CC-86B7-AF847E925217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58AC1CC3-5DFE-48CC-86B7-AF847E925217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58AC1CC3-5DFE-48CC-86B7-AF847E925217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58AC1CC3-5DFE-48CC-86B7-AF847E925217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A12246-2185-4535-8B82-75A1F04C4F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A12246-2185-4535-8B82-75A1F04C4F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A12246-2185-4535-8B82-75A1F04C4F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A12246-2185-4535-8B82-75A1F04C4F40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {817692AC-D65C-4966-B538-0CB5393A1569}
+	EndGlobalSection
+EndGlobal
