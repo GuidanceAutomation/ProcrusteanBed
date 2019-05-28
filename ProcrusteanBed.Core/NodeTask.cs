@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProcrusteanBed.Architecture;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace ProcrusteanBed.Core
 {
     public class NodeTask : AbstractMapItemTask
     {
+        public override TaskType TaskType => TaskType.NodeTask;
     }
 }

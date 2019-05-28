@@ -9,6 +9,16 @@ namespace ProcrusteanBed.Core.Controls
 {
     public static class DialogFactory
     {
+        public static SaveFileDialog GetSaveJsonDialog()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.Title = ("Open .json file");
+
+            return saveFileDialog;
+        }
+
         public static OpenFileDialog GetOpenJsonDialog()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

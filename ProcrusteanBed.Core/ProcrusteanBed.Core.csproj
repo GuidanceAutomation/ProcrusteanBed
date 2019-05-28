@@ -56,9 +56,11 @@
   <ItemGroup>
     <Compile Include="AbstractMapItemTask.cs" />
     <Compile Include="AbstractTask.cs" />
-    <Compile Include="Factory.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="JobBuilderClient_ExtensionMethods.cs" />
+    <Compile Include="JsonConverters\IEnumerableITaskConverter.cs" />
+    <Compile Include="JsonConverters\ITaskConverter.cs" />
+    <Compile Include="JsonConverters\JsonCreationConverter.cs" />
     <Compile Include="JsonTools.cs" />
     <Compile Include="AbstractListTask.cs" />
     <Compile Include="NodeTask.cs" />

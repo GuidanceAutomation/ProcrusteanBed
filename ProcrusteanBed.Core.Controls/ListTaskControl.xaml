@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <StatusBar>
-            <TextBlock Text="{Binding Path=ListTaskType, FallbackValue='fb=listTaskType'}"/>
+            <TextBlock Text="{Binding Path=TaskType, FallbackValue='fb=TaskType'}"/>
             <StatusBar.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Add Ordered List" x:Name="addOrderedListMenuItem" Click="AddOrderedListMenuItem_Click"/>

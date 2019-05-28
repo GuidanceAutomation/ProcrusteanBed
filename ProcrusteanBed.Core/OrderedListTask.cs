@@ -9,6 +9,6 @@ namespace ProcrusteanBed.Core
 {
     public class OrderedListTask : AbstractListTask
     {
-        public override ListTaskType ListTaskType => ListTaskType.OrderedList;
+        public override TaskType TaskType => TaskType.OrderedList;
     }
 }

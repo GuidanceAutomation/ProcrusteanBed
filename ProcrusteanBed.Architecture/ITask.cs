@@ -8,6 +8,8 @@ namespace ProcrusteanBed.Architecture
 {
     public interface ITask
     {
+        TaskType TaskType { get; }
+
         int TaskId { get; }
     }
 }

@@ -39,13 +39,14 @@ namespace ProcrusteanBed.Core.Controls
         }
 
         private void ConvertToJsonMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            string json = JsonTools.ToJson(Job);
+        {   
+            SaveFileDialog dialog = DialogFactory.GetSaveJsonDialog();
 
-            string tempFileName = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".txt";
-            File.WriteAllText(tempFileName, json);
-
-            Process.Start(tempFileName);
+            if (dialog.ShowDialog() == true)
+            {
+                string json = JsonTools.ToJson(Job);
+                File.WriteAllText(dialog.FileName, json);
+            }
         }
 
         private void ClearMenuItem_Click(object sender, RoutedEventArgs e)
@@ -59,7 +60,7 @@ namespace ProcrusteanBed.Core.Controls
 
             if (dialog.ShowDialog() == true)
             {
-                Job = Factory.JobFromFile(dialog.FileName);
+                Job = JsonTools.JobFromFile(dialog.FileName);
             }
         }
     }

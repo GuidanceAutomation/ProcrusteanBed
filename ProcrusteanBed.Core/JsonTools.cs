@@ -5,19 +5,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.IO;
+using ProcrusteanBed.Core.JsonConverters;
 
 namespace ProcrusteanBed.Core
 {
     public static class JsonTools
     {
-        public static string ToJson(this IMapItemTask mapItemTask)
+        private static JsonSerializerSettings GetJsonSerializerSettings()
         {
-            return JsonConvert.SerializeObject(mapItemTask);
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+           // settings.TypeNameHandling = TypeNameHandling.Objects;
+               settings.Converters.Add(new JsonConverters.IEnumerableITaskConverter());
+      //      settings.Converters.Add(new JsonConverters.IEnumerableITask2Converter());
+            settings.Converters.Add(new JsonConverters.ITaskConverter());
+
+            return settings;
         }
-                
+
+        public static Job Job(string json)
+        {
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            return JsonConvert.DeserializeObject<Job>(json, settings);
+        }
+
+        public static Job JobFromFile(string filePath)
+        {
+            using (StreamReader file = File.OpenText(filePath))
+            {
+                JsonSerializer serializer = JsonSerializer.Create(GetJsonSerializerSettings());        
+                return (Job)serializer.Deserialize(file, typeof(Job));
+            }
+        }
+
         public static string ToJson(this IJob job)
         {
-            return JsonConvert.SerializeObject(job);
+            JsonSerializerSettings settings = GetJsonSerializerSettings();
+            return JsonConvert.SerializeObject(job, settings);          
         }
     }
 }

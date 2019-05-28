@@ -8,6 +8,5 @@ namespace ProcrusteanBed.Architecture
 {
     public interface IListTask : ITask
     {
-        ListTaskType ListTaskType { get; }
     }
 }

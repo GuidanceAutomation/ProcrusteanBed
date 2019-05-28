@@ -21,7 +21,7 @@ namespace ProcrusteanBed.Core
 
         private static void CreateListTask(this IJobBuilderClient client, OrderedListTask orderedListTask)
         {           
-            switch (orderedListTask.ListTaskType)
+            switch (orderedListTask.TaskType)
             {
 
 
@@ -36,7 +36,7 @@ namespace ProcrusteanBed.Core
 
         public static Job BuildJob(this IJobBuilderClient client, string json)
         {
-            Job job = Factory.Job(json);
+            Job job = JsonTools.Job(json);
 
             job.JobId = client.CreateJob();
 
