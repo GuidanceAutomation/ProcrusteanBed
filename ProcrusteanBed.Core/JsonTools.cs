@@ -16,9 +16,8 @@ namespace ProcrusteanBed.Core
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
            // settings.TypeNameHandling = TypeNameHandling.Objects;
-               settings.Converters.Add(new JsonConverters.IEnumerableITaskConverter());
-      //      settings.Converters.Add(new JsonConverters.IEnumerableITask2Converter());
-            settings.Converters.Add(new JsonConverters.ITaskConverter());
+            settings.Converters.Add(new JsonConverters.IEnumerableITaskConverter());
+        //    settings.Converters.Add(new JsonConverters.ITaskConverter());
 
             return settings;
         }
