@@ -7,8 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <StatusBar>Service At Node</StatusBar>
+        <StatusBar>
+            Service At Node
+            <StatusBar.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Add Directive" x:Name="addDirectiveMenuItem" Click="AddDirectiveMenuItem_Click"/>
+                </ContextMenu>
+            </StatusBar.ContextMenu>
+        </StatusBar>
         <ComboBox x:Name="serviceTypeComboBox" SelectedValue="{Binding Path=ServiceType}">            
         </ComboBox>
+        <ItemsControl ItemsSource="{Binding DirectivesOC}">
+            
+        </ItemsControl>
     </StackPanel>
 </UserControl>

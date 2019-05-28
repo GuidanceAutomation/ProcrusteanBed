@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Architecture
 {
+    public static class Enumerators
+    {
+        public static readonly HashSet<Type> DirectiveTypes = new HashSet<Type>()
+        {
+            typeof(byte),
+            typeof(short),
+            typeof(ushort),
+            typeof(float),
+            typeof(System.Net.IPAddress)
+        };
+    }
+
     public enum TaskType
     {
         UnorderedList = 0,

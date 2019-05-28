@@ -50,10 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumerators.cs" />
+    <Compile Include="IDirective.cs" />
     <Compile Include="IJob.cs" />
     <Compile Include="IListTask.cs" />
     <Compile Include="IMapItemTask.cs" />
     <Compile Include="INodeTask.cs" />
+    <Compile Include="IServiceAtNodeTask.cs" />
     <Compile Include="ITask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

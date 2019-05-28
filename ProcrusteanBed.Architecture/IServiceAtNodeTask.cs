@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Architecture
 {
-    public interface IListTask : ITask
+    public interface IServiceAtNodeTask : INodeTask
     {
-        IEnumerable<ITask> Subtasks { get; set; }
+        IEnumerable<IDirective> Directives { get; set; }
+
+        void AddDirective(IDirective directive);
     }
 }

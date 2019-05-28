@@ -1,9 +1,11 @@
 ﻿using Microsoft.Win32;
+using ProcrusteanBed.Core.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ProcrusteanBed.Core.Controls
 {
@@ -17,6 +19,11 @@ namespace ProcrusteanBed.Core.Controls
             saveFileDialog.Title = ("Open .json file");
 
             return saveFileDialog;
+        }
+
+        public static CreateDirectiveDialog GetCreateDirectiveDialog()
+        {
+            return new CreateDirectiveDialog();
         }
 
         public static OpenFileDialog GetOpenJsonDialog()

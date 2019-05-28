@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Architecture
 {
-    public interface IListTask : ITask
+    public interface IDirective
     {
-        IEnumerable<ITask> Subtasks { get; set; }
+        string ParameterAlias { get; set; }
     }
 }

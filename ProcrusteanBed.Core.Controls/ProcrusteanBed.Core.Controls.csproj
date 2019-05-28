@@ -81,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DialogFactory.cs" />
+    <Compile Include="Dialogs\CreateDirectiveDialog.xaml.cs">
+      <DependentUpon>CreateDirectiveDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="JobControl.xaml.cs">
       <DependentUpon>JobControl.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Dialogs\CreateDirectiveDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="JobControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
