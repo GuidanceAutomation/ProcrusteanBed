@@ -15,6 +15,7 @@
                     <MenuItem Header="Add Ordered List" x:Name="addOrderedListMenuItem" Click="AddOrderedListMenuItem_Click"/>
                     <Separator/>
                     <MenuItem Header="Add GoTo Node Task" x:Name="addGoToNodeTaskMenuItem" Click="AddGoToNodeTaskMenuItem_Click"/>
+                    <MenuItem Header="Add Service at Node Task" x:Name="addServicingTask" Click="AddServicingTask_Click"/>
                 </ContextMenu>
             </StatusBar.ContextMenu>
         </StatusBar>
@@ -25,6 +26,9 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type core:GoToNodeTask}">
                     <local:GoToNodeTaskControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type core:ServiceAtNodeTask}">
+                    <local:ServiceAtNodeTaskControl/>
                 </DataTemplate>
             </ItemsControl.Resources>
             <ItemsControl.ItemsPanel>

@@ -27,9 +27,7 @@ namespace ProcrusteanBed.Core.Controls
 
         private void AddOrderedListMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
             AbstractListTask listTask = DataContext as AbstractListTask;
-
             listTask.AddSubtask(new OrderedListTask());           
 
         }
@@ -37,8 +35,13 @@ namespace ProcrusteanBed.Core.Controls
         private void AddGoToNodeTaskMenuItem_Click(object sender, RoutedEventArgs e)
         {
             AbstractListTask listTask = DataContext as AbstractListTask;
-
             listTask.AddSubtask(new GoToNodeTask());
+        }
+
+        private void AddServicingTask_Click(object sender, RoutedEventArgs e)
+        {
+            AbstractListTask listTask = DataContext as AbstractListTask;
+            listTask.AddSubtask(new ServiceAtNodeTask());
         }
     }
 }

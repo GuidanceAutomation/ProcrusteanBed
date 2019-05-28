@@ -29,6 +29,9 @@ namespace ProcrusteanBed.Core.JsonConverters
                 case TaskType.GoToNode:
                     return new GoToNodeTask();
 
+                case TaskType.ServiceAtNode:
+                    return new ServiceAtNodeTask();
+
                 default:
                     throw new NotImplementedException();
             }
