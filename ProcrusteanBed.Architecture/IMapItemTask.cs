@@ -9,6 +9,6 @@ namespace ProcrusteanBed.Architecture
 {
     public interface IMapItemTask : ITask, INotifyPropertyChanged
     {
-        int MapItemId { get; }
+        int MapItemId { get;  }
     }
 }

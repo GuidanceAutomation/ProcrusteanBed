@@ -25,7 +25,7 @@ namespace ProcrusteanBed.Core.JsonConverters
             return typeof(T).IsAssignableFrom(objectType);
         }
 
-        public override bool CanWrite
+        public override bool CanWrite 
         {
             get { return false; }
         }

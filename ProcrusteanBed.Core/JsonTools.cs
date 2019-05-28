@@ -15,16 +15,15 @@ namespace ProcrusteanBed.Core
         private static JsonSerializerSettings GetJsonSerializerSettings()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
-           // settings.TypeNameHandling = TypeNameHandling.Objects;
             settings.Converters.Add(new JsonConverters.IEnumerableITaskConverter());
-        //    settings.Converters.Add(new JsonConverters.ITaskConverter());
+            settings.Formatting = Formatting.Indented;
 
             return settings;
         }
 
         public static Job Job(string json)
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
+            JsonSerializerSettings settings = GetJsonSerializerSettings();
             return JsonConvert.DeserializeObject<Job>(json, settings);
         }
 

@@ -27,7 +27,6 @@ namespace ProcrusteanBed.Core.Controls
             openFileDialog.Title = ("Open .json file");
             openFileDialog.Multiselect = false;
 
-
             return openFileDialog;
         }
     }

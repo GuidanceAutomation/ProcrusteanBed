@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Core
 {
-    public class NodeTask : AbstractMapItemTask
-    {
-        public override TaskType TaskType => TaskType.NodeTask;
+    public abstract class AbstractNodeTask : AbstractMapItemTask
+    { 
     }
 }

@@ -26,8 +26,8 @@ namespace ProcrusteanBed.Core.JsonConverters
                 case TaskType.OrderedList:
                     return new OrderedListTask();
 
-                case TaskType.NodeTask:
-                    return new NodeTask();
+                case TaskType.GoToNode:
+                    return new GoToNodeTask();
 
                 default:
                     throw new NotImplementedException();

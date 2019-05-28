@@ -15,17 +15,11 @@ namespace ProcrusteanBed.Core.JsonConverters
 
         public override List<ITask> ReadJson(JsonReader reader, Type objectType, List<ITask> existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-
-
-            ITaskConverter taskConverter = new ITaskConverter();
-            
-
-
-            JArray jArray = JArray.Load(reader);
+            ITaskConverter taskConverter = new ITaskConverter();          
 
             List<ITask> tasks = new List<ITask>();
 
-            foreach (JObject jObject in jArray)
+            foreach (JObject jObject in JArray.Load(reader))
             {
 
                 ITask task = taskConverter.CreateFromJObject(jObject);

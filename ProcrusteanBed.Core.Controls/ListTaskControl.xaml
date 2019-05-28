@@ -14,17 +14,17 @@
                 <ContextMenu>
                     <MenuItem Header="Add Ordered List" x:Name="addOrderedListMenuItem" Click="AddOrderedListMenuItem_Click"/>
                     <Separator/>
-                    <MenuItem Header="Add Node Task" x:Name="addNodeTaskMenuItem" Click="AddNodeTaskMenuItem_Click"/>
+                    <MenuItem Header="Add GoTo Node Task" x:Name="addGoToNodeTaskMenuItem" Click="AddGoToNodeTaskMenuItem_Click"/>
                 </ContextMenu>
             </StatusBar.ContextMenu>
         </StatusBar>
-        <ItemsControl ItemsSource="{Binding Path=Subtasks}">
+        <ItemsControl ItemsSource="{Binding Path=SubtasksOC}">
             <ItemsControl.Resources>
                 <DataTemplate DataType="{x:Type core:OrderedListTask}">
                     <local:ListTaskControl/>
                 </DataTemplate>
-                <DataTemplate DataType="{x:Type core:NodeTask}">
-                    <local:NodeTaskControl/>
+                <DataTemplate DataType="{x:Type core:GoToNodeTask}">
+                    <local:GoToNodeTaskControl/>
                 </DataTemplate>
             </ItemsControl.Resources>
             <ItemsControl.ItemsPanel>

@@ -34,11 +34,11 @@ namespace ProcrusteanBed.Core.Controls
 
         }
 
-        private void AddNodeTaskMenuItem_Click(object sender, RoutedEventArgs e)
+        private void AddGoToNodeTaskMenuItem_Click(object sender, RoutedEventArgs e)
         {
             AbstractListTask listTask = DataContext as AbstractListTask;
 
-            listTask.AddSubtask(new NodeTask());
+            listTask.AddSubtask(new GoToNodeTask());
         }
     }
 }

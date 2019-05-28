@@ -18,9 +18,9 @@ namespace ProcrusteanBed.Core.Controls
     /// <summary>
     /// Interaction logic for NodeTaskControl.xaml
     /// </summary>
-    public partial class NodeTaskControl : UserControl
+    public partial class GoToNodeTaskControl : UserControl
     {
-        public NodeTaskControl()
+        public GoToNodeTaskControl()
         {
             InitializeComponent();
         }

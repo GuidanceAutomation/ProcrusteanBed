@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Architecture
 {
-    public enum TaskType
+    public interface INodeTask : IMapItemTask
     {
-        UnorderedList = 0,
-        OrderedList = 1,
-        AtomicMoveList = 2,
-        GoToNode = 3
-    };
+    }
 }

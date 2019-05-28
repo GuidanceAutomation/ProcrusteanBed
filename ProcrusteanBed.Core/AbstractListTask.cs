@@ -17,19 +17,19 @@ namespace ProcrusteanBed.Core
 
         private ReadOnlyObservableCollection<ITask> readonlySubtasks;
 
-        public ReadOnlyObservableCollection<ITask> Subtasks => readonlySubtasks;
+        public ReadOnlyObservableCollection<ITask> SubtasksOC => readonlySubtasks;
 
         [DataMember]
-        public IEnumerable<ITask> Foo
+        public IEnumerable<ITask> Subtasks
         {
-            get { return Subtasks.ToList(); }
+            get { return subtasks.ToList(); }
             set
             {
                 subtasks.Clear();      
 
                 foreach(ITask subTask in value)
                 {
-                    AddSubtask(subTask);
+                    subtasks.Add(subTask);
                 }
             }
         }
