@@ -21,6 +21,7 @@ namespace ProcrusteanBed.Architecture
         OrderedList = 1,
         AtomicMoveList = 2,
         GoToNode = 3,
-        ServiceAtNode = 4
+        ServiceAtNode = 4,
+		AwaitAtNode = 5
     };
 }

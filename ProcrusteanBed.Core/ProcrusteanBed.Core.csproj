@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="AbstractMapItemTask.cs" />
     <Compile Include="AbstractTask.cs" />
+    <Compile Include="AwaitAtNodeTask.cs" />
     <Compile Include="GenericDirective.cs" />
     <Compile Include="GoToNodeTask.cs" />
     <Compile Include="Job.cs" />

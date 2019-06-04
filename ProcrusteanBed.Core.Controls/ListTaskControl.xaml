@@ -14,6 +14,7 @@
                 <ContextMenu>
                     <MenuItem Header="Add Ordered List" x:Name="addOrderedListMenuItem" Click="AddOrderedListMenuItem_Click"/>
                     <Separator/>
+                    <MenuItem Header="Add Await Task" x:Name="addAwaitTaskMenuItem" Click="AddAwaitTaskMenuItem_Click"/>
                     <MenuItem Header="Add GoTo Node Task" x:Name="addGoToNodeTaskMenuItem" Click="AddGoToNodeTaskMenuItem_Click"/>
                     <MenuItem Header="Add Service at Node Task" x:Name="addServicingTask" Click="AddServicingTask_Click"/>
                 </ContextMenu>
@@ -29,6 +30,9 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type core:ServiceAtNodeTask}">
                     <local:ServiceAtNodeTaskControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type core:AwaitAtNodeTask}">
+                    <local:AwaitAtNodeTaskControl/>
                 </DataTemplate>
             </ItemsControl.Resources>
             <ItemsControl.ItemsPanel>

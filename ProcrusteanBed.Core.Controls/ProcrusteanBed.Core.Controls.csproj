@@ -80,6 +80,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AwaitAtNodeTaskControl.xaml.cs">
+      <DependentUpon>AwaitAtNodeTaskControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DialogFactory.cs" />
     <Compile Include="Dialogs\CreateDirectiveDialog.xaml.cs">
       <DependentUpon>CreateDirectiveDialog.xaml</DependentUpon>
@@ -134,6 +137,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AwaitAtNodeTaskControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\CreateDirectiveDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
