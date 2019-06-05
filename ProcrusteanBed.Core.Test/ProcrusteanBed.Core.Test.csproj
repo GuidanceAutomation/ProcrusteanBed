@@ -79,7 +79,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="TJobBuilder_ExtensionMethods.cs" />
+    <Compile Include="TJobTemplate.cs" />
+    <Compile Include="TJobTemplateCollection.cs" />
     <Compile Include="TJsonTools.cs" />
+    <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

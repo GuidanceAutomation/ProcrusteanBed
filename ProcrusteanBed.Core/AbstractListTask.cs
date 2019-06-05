@@ -29,7 +29,7 @@ namespace ProcrusteanBed.Core
 
                 foreach(ITask subTask in value)
                 {
-                    subtasks.Add(subTask);
+					AddSubtask(subTask);
                 }
             }
         }

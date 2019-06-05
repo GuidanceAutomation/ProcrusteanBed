@@ -77,10 +77,14 @@
     <Compile Include="AwaitAtNodeTask.cs" />
     <Compile Include="GenericDirective.cs" />
     <Compile Include="GoToNodeTask.cs" />
+    <Compile Include="JsonConverters\IEnumerableJobTemplateConverter.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="JobBuilderClient_ExtensionMethods.cs" />
+    <Compile Include="JobTemplate.cs" />
+    <Compile Include="JobTemplateCollection.cs" />
     <Compile Include="JsonConverters\IEnumerableITaskConverter.cs" />
     <Compile Include="JsonConverters\ITaskConverter.cs" />
+    <Compile Include="JsonConverters\JobTemplateConverter.cs" />
     <Compile Include="JsonConverters\JsonCreationConverter.cs" />
     <Compile Include="JsonTools.cs" />
     <Compile Include="AbstractListTask.cs" />

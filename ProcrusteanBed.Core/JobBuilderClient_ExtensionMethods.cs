@@ -84,7 +84,7 @@ namespace ProcrusteanBed.Core
 
         public static Job BuildJobFromJson(this IJobBuilderClient client, string json)
         {
-            Job job = JsonTools.Job(json);
+            Job job = JsonTools.ToJob(json);
 
             JobData jobData = client.CreateJob();
 

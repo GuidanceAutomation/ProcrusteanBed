@@ -2,14 +2,10 @@
 using Newtonsoft.Json.Linq;
 using ProcrusteanBed.Architecture;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Core.JsonConverters
 {
-    public class ITaskConverter : JsonCreationConverter<ITask>
+	public class ITaskConverter : JsonCreationConverter<ITask>
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
@@ -34,7 +30,8 @@ namespace ProcrusteanBed.Core.JsonConverters
 
                 default:
                     throw new NotImplementedException();
-            }
+
+			}
         }
 
         protected override ITask Create(Type objectType, JObject jObject)

@@ -21,7 +21,7 @@ namespace ProcrusteanBed.Core.Test
 
             Assert.IsNotNull(json);
 
-            Job obj = JsonTools.Job(json);
+            Job obj = JsonTools.ToJob(json);
             Assert.IsNotNull(obj);               
         }
 
@@ -39,7 +39,7 @@ namespace ProcrusteanBed.Core.Test
 
             Assert.IsNotNull(json);
 
-            Job obj = JsonTools.Job(json);
+            Job obj = JsonTools.ToJob(json);
             Assert.IsNotNull(obj);
             Assert.AreEqual(listTaskId, obj.RootOrderedListTaskId);
         }

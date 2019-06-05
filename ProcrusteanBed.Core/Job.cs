@@ -10,7 +10,7 @@ namespace ProcrusteanBed.Core
     public class Job : IJob
     {
         private int jobId = -1;
-
+		
         public int JobId
         {
             get { return jobId; }

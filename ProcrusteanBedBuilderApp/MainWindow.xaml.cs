@@ -22,7 +22,7 @@ namespace ProcrusteanBedBuilderApp
     {
         public MainWindow()
         {
-            InitializeComponent();
+       
         }
     }
 }

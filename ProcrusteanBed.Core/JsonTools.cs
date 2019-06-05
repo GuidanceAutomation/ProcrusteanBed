@@ -16,12 +16,37 @@ namespace ProcrusteanBed.Core
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.Converters.Add(new JsonConverters.IEnumerableITaskConverter());
-            settings.Formatting = Formatting.Indented;
+			settings.Converters.Add(new JsonConverters.IEnumerableJobTemplateConverter());
+			settings.Formatting = Formatting.Indented;
 
             return settings;
         }
 
-        public static Job Job(string json)
+		public static string ToJson(this JobTemplate jobTemplate)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.SerializeObject(jobTemplate, settings);
+		}
+
+		public static JobTemplate ToJobTemplate(string json)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.DeserializeObject<JobTemplate>(json, settings);
+		}
+
+		public static JobTemplateCollection ToJobTemplateCollection(string json)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.DeserializeObject<JobTemplateCollection>(json, settings);
+		}
+
+		public static string ToJson(this JobTemplateCollection jobTemplateCollection)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.SerializeObject(jobTemplateCollection, settings);
+		}
+
+        public static Job ToJob(string json)
         {
             JsonSerializerSettings settings = GetJsonSerializerSettings();
             return JsonConvert.DeserializeObject<Job>(json, settings);
