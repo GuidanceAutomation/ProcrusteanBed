@@ -1,33 +1,31 @@
-﻿<UserControl x:Class="ProcrusteanBed.Core.Controls.ServiceAtNodeTaskControl"
+﻿<UserControl x:Class="ProcrusteanBed.Core.Controls.AtomicMoveListControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:core="clr-namespace:ProcrusteanBed.Core;assembly=ProcrusteanBed.Core"
-             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:local="clr-namespace:ProcrusteanBed.Core.Controls"
-             xmlns:arch="clr-namespace:ProcrusteanBed.Architecture;assembly=ProcrusteanBed.Architecture"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <StatusBar>
-            Service At Node
+            <TextBlock Text="{Binding Path=TaskType, FallbackValue='fb=TaskType'}"/>
             <StatusBar.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Add Directive" x:Name="addDirectiveMenuItem" Click="AddDirectiveMenuItem_Click"/>
+                    <MenuItem Header="Add Atomic Move" x:Name="addAtomicMoveMenuItem" Click="AddAtomicMoveMenuItem_Click"/>
                 </ContextMenu>
             </StatusBar.ContextMenu>
         </StatusBar>
-        <TextBlock>Node Id</TextBlock>
-        <toolkit:IntegerUpDown Value="{Binding Path=MapItemId}"/>
-        <ComboBox x:Name="serviceTypeComboBox" SelectedValue="{Binding Path=ServiceType}">            
-        </ComboBox>
-        <ItemsControl ItemsSource="{Binding DirectivesOC}">
+        <ItemsControl ItemsSource="{Binding Path=SubtasksOC}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <local:GenericDirectiveControl/>
+                    <local:AtomicMoveControl/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
         </ItemsControl>
     </StackPanel>
 </UserControl>

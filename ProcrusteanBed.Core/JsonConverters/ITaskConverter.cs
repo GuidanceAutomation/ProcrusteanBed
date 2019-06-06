@@ -28,6 +28,12 @@ namespace ProcrusteanBed.Core.JsonConverters
                 case TaskType.ServiceAtNode:
                     return new ServiceAtNodeTask();
 
+				case TaskType.AtomicMoveList:
+					return new AtomicMoveListTask();
+
+				case TaskType.AtomicMove:
+					return new AtomicMoveTask();
+
                 default:
                     throw new NotImplementedException();
 			}

@@ -31,6 +31,7 @@ namespace ProcrusteanBed.Architecture
         AtomicMoveList = 2,
         GoToNode = 3,
         ServiceAtNode = 4,
-		AwaitAtNode = 5
+		AwaitAtNode = 5,
+		AtomicMove = 6
     };
 }

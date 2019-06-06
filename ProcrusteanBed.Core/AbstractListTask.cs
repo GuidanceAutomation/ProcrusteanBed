@@ -34,7 +34,7 @@ namespace ProcrusteanBed.Core
             }
         }
 
-        public void AddSubtask(ITask subtask)
+        public virtual void AddSubtask(ITask subtask)
         {
             subtasks.Add(subtask);
         }

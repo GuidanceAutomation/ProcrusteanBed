@@ -13,6 +13,7 @@
             <StatusBar.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Add Ordered List" x:Name="addOrderedListMenuItem" Click="AddOrderedListMenuItem_Click"/>
+                    <MenuItem Header="Add Atomic Move List" x:Name="addAtomicMoveListMenuItem" Click="AddAtomicMoveListMenuItem_Click"/>
                     <Separator/>
                     <MenuItem Header="Add Await Task" x:Name="addAwaitTaskMenuItem" Click="AddAwaitTaskMenuItem_Click"/>
                     <MenuItem Header="Add GoTo Node Task" x:Name="addGoToNodeTaskMenuItem" Click="AddGoToNodeTaskMenuItem_Click"/>
@@ -33,6 +34,9 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type core:AwaitAtNodeTask}">
                     <local:AwaitAtNodeTaskControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type core:AtomicMoveListTask}">
+                    <local:AtomicMoveListControl/>
                 </DataTemplate>
             </ItemsControl.Resources>
             <ItemsControl.ItemsPanel>

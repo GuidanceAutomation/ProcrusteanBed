@@ -48,5 +48,11 @@ namespace ProcrusteanBed.Core.Controls
 			AbstractListTask listTask = DataContext as AbstractListTask;
 			listTask.AddSubtask(new AwaitAtNodeTask());
 		}
+
+		private void AddAtomicMoveListMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			AbstractListTask listTask = DataContext as AbstractListTask;
+			listTask.AddSubtask(new AtomicMoveListTask());
+		}
 	}
 }

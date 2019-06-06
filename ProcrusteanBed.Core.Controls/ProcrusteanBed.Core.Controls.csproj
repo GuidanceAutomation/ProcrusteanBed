@@ -80,6 +80,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtomicMoveControl.xaml.cs">
+      <DependentUpon>AtomicMoveControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AtomicMoveListControl.xaml.cs">
+      <DependentUpon>AtomicMoveListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AwaitAtNodeTaskControl.xaml.cs">
       <DependentUpon>AwaitAtNodeTaskControl.xaml</DependentUpon>
     </Compile>
@@ -143,6 +149,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AtomicMoveControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AtomicMoveListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AwaitAtNodeTaskControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
