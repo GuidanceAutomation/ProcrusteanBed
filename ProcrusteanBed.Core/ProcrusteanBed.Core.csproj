@@ -75,8 +75,11 @@
     <Compile Include="AbstractMapItemTask.cs" />
     <Compile Include="AbstractTask.cs" />
     <Compile Include="AwaitAtNodeTask.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="GenericDirective.cs" />
     <Compile Include="GoToNodeTask.cs" />
+    <Compile Include="JsonConverters\IDirectiveConverter.cs" />
+    <Compile Include="JsonConverters\IEnumerableIDirectiveConverter.cs" />
     <Compile Include="JsonConverters\IEnumerableJobTemplateConverter.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="JobBuilderClient_ExtensionMethods.cs" />

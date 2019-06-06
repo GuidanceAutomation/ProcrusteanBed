@@ -15,8 +15,10 @@ namespace ProcrusteanBed.Core
         private static JsonSerializerSettings GetJsonSerializerSettings()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.Converters.Add(new JsonConverters.IEnumerableITaskConverter());
-			settings.Converters.Add(new JsonConverters.IEnumerableJobTemplateConverter());
+            settings.Converters.Add(new IEnumerableITaskConverter());
+			settings.Converters.Add(new IEnumerableJobTemplateConverter());
+			settings.Converters.Add(new IDirectiveConverter());
+			settings.Converters.Add(new IEnumerableIDirectiveConverter());
 			settings.Formatting = Formatting.Indented;
 
             return settings;

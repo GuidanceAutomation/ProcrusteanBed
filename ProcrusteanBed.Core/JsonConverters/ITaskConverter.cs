@@ -30,7 +30,6 @@ namespace ProcrusteanBed.Core.JsonConverters
 
                 default:
                     throw new NotImplementedException();
-
 			}
         }
 

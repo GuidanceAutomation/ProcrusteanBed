@@ -15,6 +15,15 @@ namespace ProcrusteanBed.Architecture
         };
     }
 
+	public enum DirectiveType
+	{
+		Byte = 0,
+		Short = 1,
+		UShort = 2,
+		Float = 3,
+		IPAddress = 4
+	};
+
     public enum TaskType
     {
         UnorderedList = 0,
