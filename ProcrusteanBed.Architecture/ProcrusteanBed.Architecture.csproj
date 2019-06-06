@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Enumerators.cs" />
     <Compile Include="IDirective.cs" />
+    <Compile Include="IGenericDirective.cs" />
     <Compile Include="IJob.cs" />
     <Compile Include="IListTask.cs" />
     <Compile Include="IMapItemTask.cs" />

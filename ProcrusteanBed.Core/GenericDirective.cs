@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Core
 {
-    public class GenericDirective<T> : IDirective
+    public class GenericDirective<T> : IGenericDirective<T>
     {
         private T directiveValue;
 

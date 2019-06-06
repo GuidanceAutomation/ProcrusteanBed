@@ -87,6 +87,9 @@
     <Compile Include="Dialogs\CreateDirectiveDialog.xaml.cs">
       <DependentUpon>CreateDirectiveDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Directives\ByteControl.xaml.cs">
+      <DependentUpon>ByteControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GenericDirectiveControl.xaml.cs">
       <DependentUpon>GenericDirectiveControl.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Directives\ByteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GenericDirectiveControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,5 +180,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

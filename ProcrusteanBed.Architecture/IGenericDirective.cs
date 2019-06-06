@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProcrusteanBed.Architecture
 {
-    public interface IDirective
-    {
-        string ParameterAlias { get; set; }	
-    }
+	public interface IGenericDirective<T> : IDirective
+	{
+		T DirectiveValue { get; set; }
+	}
 }

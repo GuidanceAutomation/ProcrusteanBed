@@ -1,13 +1,16 @@
 ﻿<UserControl x:Class="ProcrusteanBed.Core.Controls.GenericDirectiveControl"
+             x:Name="genericDirectiveControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProcrusteanBed.Core.Controls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             DataContextChanged="GenericDirectiveControl_DataContextChanged"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <TextBlock>VOEWGEW</TextBlock>    
-        
+    <StackPanel x:Name="mainStack">
+        <TextBlock>Parameter Alias:</TextBlock>
+        <TextBox Text="{Binding Path=ParameterAlias, FallbackValue='fbParameterAlias'}"/>
     </StackPanel>
 </UserControl>
