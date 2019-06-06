@@ -19,21 +19,61 @@ namespace ProcrusteanBed.Core
             return jobData;
         }
 
-        private static void CreateGoToNodeTask(this IJobBuilderClient client, AbstractNodeTask nodeTask, int parentTaskId)
+        private static void CreateGoToNodeTask(this IJobBuilderClient client, GoToNodeTask nodeTask, int parentTaskId)
         {
-            ServiceOperationResult result = client.TryCreateGoToNodeTask(parentTaskId, nodeTask.MapItemId, out int moveTaskId);
-            nodeTask.MapItemId = moveTaskId;       
+            ServiceOperationResult result = client.TryCreateGoToNodeTask(parentTaskId, nodeTask.MapItemId, out int goToTaskId);
+            nodeTask.TaskId = goToTaskId;       
         }
 
-        private static void CreateMapItemTask(this IJobBuilderClient client, IMapItemTask mapItemTask, int parentTaskId)
+		private static void CreateServiceAtNodeTask(this IJobBuilderClient client, ServiceAtNodeTask serviceAtNodeTask, int parentTaskId)
+		{
+			ServiceOperationResult result = client.TryCreateServicingTask(parentTaskId, serviceAtNodeTask.MapItemId, serviceAtNodeTask.ServiceType, out int serviceTaskId);
+			serviceAtNodeTask.TaskId = serviceTaskId;
+
+			foreach(IDirective directive in serviceAtNodeTask.Directives)
+			{
+				switch (directive.DirectiveType)
+				{
+					case DirectiveType.Byte:
+						{
+							IGenericDirective<byte> byteDirective = (IGenericDirective<byte>)directive;
+							client.TryIssueDirective(serviceTaskId, directive.ParameterAlias, byteDirective.DirectiveValue);
+							break;
+						}
+
+					default:
+						throw new NotImplementedException();
+				}
+			}
+		}
+
+		private static void CreateAtomicMoveTask(this IJobBuilderClient client, AtomicMoveTask atomicMoveTask, int parentTaskId)
+		{
+			ServiceOperationResult result = client.TryCreateAtomicMoveTask(parentTaskId, atomicMoveTask.MapItemId, out int atomicMoveTaskId);
+			atomicMoveTask.TaskId = atomicMoveTaskId;
+		}
+
+		private static void CreateMapItemTask(this IJobBuilderClient client, IMapItemTask mapItemTask, int parentTaskId)
         {
             switch (mapItemTask)
             {
+				case AtomicMoveTask atomicMoveTask:
+					{
+						CreateAtomicMoveTask(client, atomicMoveTask, parentTaskId);
+						break;
+					}
+
                 case GoToNodeTask goToNodeTask:
                     {
                         CreateGoToNodeTask(client, goToNodeTask, parentTaskId);
                         break;
                     }
+
+				case ServiceAtNodeTask serviceAtNodeTask:
+					{
+						CreateServiceAtNodeTask(client, serviceAtNodeTask, parentTaskId);
+						break;
+					}
 
                 default:
                     throw new NotImplementedException();
@@ -41,13 +81,19 @@ namespace ProcrusteanBed.Core
 
         }
 
+		private static void CreateAtomicMoveListTask(this IJobBuilderClient client, AbstractListTask listTask, int parentTaskId)
+		{
+			client.TryCreateAtomicMoveListTask(parentTaskId, out int listTaskId);
+			listTask.TaskId = listTaskId;		
+		}
+
         private static void CreateTask(this IJobBuilderClient client, ITask task, int parentTaskId)
         {
             switch(task)
             {
-                case IListTask listTask:
+                case AbstractListTask listTask:
                     {
-                        CreateListTask(client, listTask);
+                        CreateListTask(client, listTask, parentTaskId);
                         break;
                     }
 
@@ -62,20 +108,23 @@ namespace ProcrusteanBed.Core
             }
         }
 
-        private static void CreateListTask(this IJobBuilderClient client, IListTask listTask)
-        {
-            throw new NotImplementedException();
 
+
+        private static void CreateListTask(this IJobBuilderClient client, AbstractListTask listTask, int parentTaskId)
+        {
             switch (listTask.TaskType)
             {
-                case TaskType.OrderedList:
+                case TaskType.AtomicMoveList:
                     {
+						CreateAtomicMoveListTask(client, listTask, parentTaskId);
                         break;
                     }
 
                 default: throw new NotImplementedException();
             }
-        }
+
+			listTask.Subtasks.ForEach(e => CreateTask(client, e, listTask.TaskId));
+		}
 
         public static Job BuildJobFromFile(this IJobBuilderClient client, string filePath)
         {

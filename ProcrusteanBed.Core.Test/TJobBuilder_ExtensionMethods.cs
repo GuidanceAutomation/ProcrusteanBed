@@ -8,6 +8,7 @@ using SchedulingClients;
 using ProcrusteanBed.Core;
 using BaseClients;
 using System.Net;
+using System.IO;
 
 namespace ProcrusteanBed.Core.Test
 {
@@ -36,5 +37,12 @@ namespace ProcrusteanBed.Core.Test
         {
             Job populatedJob = client.BuildJobFromJson(Properties.Resources.GoToNode2);
         }
+
+		[Test]
+		public void Nooooo()
+		{
+			string json = File.ReadAllText(@"C:\Users\martin.davies.AUTOMATION1\Documents\json\noo.txt");
+			Job populatedJob = client.BuildJobFromJson(json);
+		}
     }
 }
