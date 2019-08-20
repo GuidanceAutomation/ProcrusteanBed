@@ -34,6 +34,9 @@ namespace ProcrusteanBed.Core.JsonConverters
 				case TaskType.AtomicMove:
 					return new AtomicMoveTask();
 
+				case TaskType.AwaitAtNode:
+					return new AwaitAtNodeTask();
+
                 default:
                     throw new NotImplementedException();
 			}

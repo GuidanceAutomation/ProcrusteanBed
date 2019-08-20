@@ -41,8 +41,15 @@ namespace ProcrusteanBed.Core.Test
 		[Test]
 		public void Nooooo()
 		{
-			string json = File.ReadAllText(@"C:\Users\martin.davies.AUTOMATION1\Documents\json\noo.txt");
-			Job populatedJob = client.BuildJobFromJson(json);
+			for (int i = 0; i <2; i++)
+			{
+				string json = File.ReadAllText(@"C:\Users\martin.davies.AUTOMATION1\Documents\json\BagV-3896 Doorn.txt");
+				//string json = File.ReadAllText(@"C:\Users\martin.davies.AUTOMATION1\Documents\json\nooGoTo.txt");
+				//string json = File.ReadAllText(@"C:\Users\martin.davies.AUTOMATION1\Documents\json\leyley.txt");
+				Job populatedJob = client.BuildJobFromJson(json);
+			}
+
+
 		}
     }
 }

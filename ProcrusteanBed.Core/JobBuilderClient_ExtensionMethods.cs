@@ -25,6 +25,12 @@ namespace ProcrusteanBed.Core
             nodeTask.TaskId = goToTaskId;       
         }
 
+		private static void CreateAwaitAtNodeTask(this IJobBuilderClient client, AwaitAtNodeTask awaitAtNodeTask, int parentTaskId)
+		{
+			ServiceOperationResult result = client.TryCreateAwaitingTask(parentTaskId, awaitAtNodeTask.MapItemId, out int awaitTaskId);
+			awaitAtNodeTask.TaskId = awaitTaskId;
+		}
+
 		private static void CreateServiceAtNodeTask(this IJobBuilderClient client, ServiceAtNodeTask serviceAtNodeTask, int parentTaskId)
 		{
 			ServiceOperationResult result = client.TryCreateServicingTask(parentTaskId, serviceAtNodeTask.MapItemId, serviceAtNodeTask.ServiceType, out int serviceTaskId);
@@ -72,6 +78,12 @@ namespace ProcrusteanBed.Core
 				case ServiceAtNodeTask serviceAtNodeTask:
 					{
 						CreateServiceAtNodeTask(client, serviceAtNodeTask, parentTaskId);
+						break;
+					}
+
+				case AwaitAtNodeTask awaitAtNodeTask:
+					{
+						CreateAwaitAtNodeTask(client, awaitAtNodeTask, parentTaskId);
 						break;
 					}
 

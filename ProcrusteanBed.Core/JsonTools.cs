@@ -24,6 +24,24 @@ namespace ProcrusteanBed.Core
             return settings;
         }
 
+		public static IEnumerable<VehiclePose> ToVehiclePoses(string json)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.DeserializeObject<IEnumerable<VehiclePose>>(json, settings);
+		}
+
+		public static string ToJson(this VehiclePose vehiclePose)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.SerializeObject(vehiclePose, settings);
+		}
+
+		public static string ToJson(this IEnumerable<VehiclePose> vehiclePoses)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.SerializeObject(vehiclePoses, settings);
+		}
+
 		public static string ToJson(this JobTemplate jobTemplate)
 		{
 			JsonSerializerSettings settings = GetJsonSerializerSettings();
@@ -34,6 +52,12 @@ namespace ProcrusteanBed.Core
 		{
 			JsonSerializerSettings settings = GetJsonSerializerSettings();
 			return JsonConvert.DeserializeObject<JobTemplate>(json, settings);
+		}
+
+		public static VehiclePose ToVehiclePose(string json)
+		{
+			JsonSerializerSettings settings = GetJsonSerializerSettings();
+			return JsonConvert.DeserializeObject<VehiclePose>(json, settings);
 		}
 
 		public static JobTemplateCollection ToJobTemplateCollection(string json)
